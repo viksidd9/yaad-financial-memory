@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yaad — Human Interaction Map</title>
+<meta name="description" content="Every screen or conversation where Yaad meets a person.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav"><a class="brand" href="../"><span class="brandmark"></span><span>Yaad</span></a><div class="navlinks"><a href="../">Landing page</a><a class="solid" href="../#join">Join the first 1,000</a></div></nav>
+  <section class="mock-hero">
+    <div class="eyebrow">Submission mockups</div>
+    <h1>Yaad — Human Interaction Map</h1>
+    <p>Every point where a person sees, answers, authorises or corrects Yaad. Screens below are taken from the working Round 3 product wherever available; interaction-state mockups fill the two transient moments that occur inside the live flow.</p>
+    <div class="legend"><span>SEE — understand state</span><span>ASK — clarify only when material</span><span>REMEMBER — persist context</span><span>ACT — explicit authority only</span></div>
+    <div class="note"><strong>Design principle:</strong> Yaad should consume less attention, not more. If evidence is sufficient, the best interaction is no interaction.</div>
+  </section>
+
+  <main class="map">
+    <article class="screen-card wide"><div class="screen-meta"><div class="tag">01 · Home</div><h2>Home — “Your month makes sense.”</h2><p>The primary surface. It shows explained spending, Money Due Back, transfers excluded, runway, watching and whether anything Needs You.</p></div><img src="../assets/home.png" alt="Yaad Home screen"></article>
+
+    <article class="screen-card"><div class="screen-meta"><div class="tag">02 · Needs You</div><h2>Needs You — one material ambiguity</h2><p>Only a payment whose meaning could materially change spending or an obligation is escalated.</p></div><div class="interaction-mock"><span class="label">NEEDS YOU</span><h3>One payment needs context.</h3><div class="issue"><div><strong>₹1,200 → Arjun Kumar</strong><span>What was this ₹1,200 payment to Arjun Kumar?</span></div><b>›</b></div><button class="mockbtn">Respond</button></div></article>
+
+    <article class="screen-card"><div class="screen-meta"><div class="tag">03 · Voice clarification</div><h2>Voice clarification — ask once, naturally</h2><p>Vikram can answer by voice or text. Voice is treated as evidence, not automatically as financial truth.</p></div><img src="../assets/ask-yaad.png" alt="Yaad Ask Yaad voice clarification modal"></article>
+
+    <article class="screen-card"><div class="screen-meta"><div class="tag">04 · Exact Gnani transcript</div><h2>Exact Gnani transcript — preserved unchanged</h2><p>Gnani’s returned transcript is shown read-only. The user explicitly sends that exact text to Yaad; no silent correction or rewriting occurs.</p></div><div class="interaction-mock"><span class="label">GNANI RESPONSE · EXACT TRANSCRIPT</span><h3>Voice became evidence.</h3><div class="transcript"><small>Read-only transcript</small><blockquote>“Dinner. ₹600 was mine and ₹600 he owes me.”</blockquote><small>No correction or rewriting is applied.</small></div><button class="mockbtn">Send exact transcript to Yaad</button></div></article>
+
+    <article class="screen-card wide"><div class="screen-meta"><div class="tag">05 · Clarification result</div><h2>Clarification result — ₹600 spent, ₹600 due back</h2><p>The confirmed meaning becomes Financial Memory: a shared expense with an open receivable from Arjun Kumar.</p></div><img src="../assets/context-layer.png" alt="Yaad Context Layer shared expense result"></article>
+
+    <article class="screen-card"><div class="screen-meta"><div class="tag">06 · Money Due Back</div><h2>Money Due Back — obligations remain open</h2><p>Arjun’s ₹600 receivable and UrbanStep’s ₹3,499 refund remain visible until credible settlement evidence closes them.</p></div><img src="../assets/money-due-back.png" alt="Yaad Money Due Back screen"></article>
+
+    <article class="screen-card"><div class="screen-meta"><div class="tag">07 · Transactions</div><h2>Transactions — movement separated from meaning</h2><p>Raw movement and economic meaning stay distinct. A self-transfer can appear as movement while remaining excluded from spending.</p></div><div class="interaction-mock"><span class="label">TRANSACTIONS</span><h3>Events, not assumptions.</h3><div class="issue"><div><strong>HDFC → SBI</strong><span>SELF_TRANSFER · debit</span></div><b>−₹10,000</b></div><div class="issue"><div><strong>HDFC → SBI</strong><span>SELF_TRANSFER · credit</span></div><b>+₹10,000</b></div></div></article>
+
+    <article class="screen-card wide"><div class="screen-meta"><div class="tag">08 · Context Layer</div><h2>Context Layer — payment plus economic meaning</h2><p>The proposed Financial Context Layer preserves purpose, personal share, receivable, counterparty, source, confidence and obligation state alongside the payment reference.</p></div><img src="../assets/context-layer.png" alt="Yaad proposed Financial Context Layer"></article>
+
+    <article class="screen-card"><div class="screen-meta"><div class="tag">09 · Memory</div><h2>Memory — confirmed context compounds</h2><p>Confirmed relationships reduce future maintenance, but remembered patterns never override contradictory present evidence.</p></div><img src="../assets/memory.png" alt="Yaad Memory screen"></article>
+
+    <article class="screen-card"><div class="screen-meta"><div class="tag">10 · Permissions</div><h2>Permissions — SEE / UNDERSTAND / ASK / ACT</h2><p>Access to data is separated from interpretation, clarification and irreversible action authority.</p></div><img src="../assets/permissions.png" alt="Yaad Permissions screen"></article>
+
+    <article class="screen-card wide"><div class="screen-meta"><div class="tag">11 · Ask Yaad</div><h2>Ask Yaad — voice or text</h2><p>A person can proactively explain a payment or answer a clarification without navigating through transaction-management screens.</p></div><img src="../assets/ask-yaad.png" alt="Yaad Ask Yaad interface"></article>
+
+    <article class="screen-card"><div class="screen-meta"><div class="tag">12 · Financial Memory</div><h2>Financial Memory — relationships, not rows</h2><p>The user sees accounts, people and obligations as connected financial state rather than isolated transaction lines.</p></div><img src="../assets/financial-memory.png" alt="Yaad Financial Memory graph"></article>
+
+    <article class="screen-card"><div class="screen-meta"><div class="tag">13 · Stale / revoked / incomplete data</div><h2>Stale or revoked access — uncertainty stays visible</h2><p>If consent expires or retrieval becomes partial, Yaad preserves the last authoritative state, stops fresh retrieval and marks affected memory stale/partial rather than pretending it is complete.</p></div><div class="interaction-mock"><span class="label">SOURCE STATUS</span><h3>Financial view is partial.</h3><p>One connected source is unavailable or stale. Yaad will not infer missing transactions or claim a complete financial picture.</p><div class="issue"><div><strong>Last authoritative sync preserved</strong><span>Fresh retrieval paused until access is restored.</span></div><b>PARTIAL</b></div></div></article>
+  </main>
+
+  <footer class="footer"><div class="footer-inner"><a class="backlink" href="../">← Back to landing page</a><span>Yaad — Your money, remembered correctly.</span></div></footer>
+</div>
+</body>
+</html>
