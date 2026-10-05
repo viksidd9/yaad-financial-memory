@@ -1,4 +1,4 @@
-﻿import fs from 'node:fs';
+import fs from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -17,6 +17,24 @@ for (const word of ['SEE', 'UNDERSTAND', 'ASK', 'ACT']) check(landing.includes(w
 const cardCount = (mockups.match(/<article class="screen-card(?:\s+wide)?"/g) || []).length;
 check(cardCount === 13, 'expected 13 mockup screen-card articles, found ' + cardCount);
 
+for (const text of [
+  'FINANCIAL MEMORY GRAPH',
+  'LIVE CONTEXT',
+  'HDFC Savings',
+  'SBI Savings',
+  'Arjun Kumar',
+  'UrbanStep',
+  '₹73,300',
+  '₹46,200',
+  '₹600 due back',
+  '₹3,499 refund expected',
+  '₹10,000 excluded',
+  '₹4,099 due back',
+]) check(mockups.includes(text), 'mockup hero context missing: ' + text);
+check(/memory-context-layer/.test(mockups), 'rich memory context layer missing');
+check(/context-rail/.test(mockups), 'memory context action rail missing');
+check(/context-card/.test(mockups), 'memory context cards missing');
+
 for (const [name, html] of [['landing', landing], ['mockups', mockups]]) {
   check(/three-memory\.js/.test(html), name + ' missing three-memory.js module');
   check(/motion\.js/.test(html), name + ' missing motion.js module');
@@ -26,6 +44,9 @@ for (const [name, html] of [['landing', landing], ['mockups', mockups]]) {
 
 check(/prefers-reduced-motion:\s*reduce/.test(css), 'reduced-motion CSS missing');
 check(/\.three-fallback/.test(css), 'three-fallback styling missing');
+check(/\.memory-context-layer/.test(css), 'rich memory context CSS missing');
+check(/\.context-card/.test(css), 'context card CSS missing');
+check(/\.context-rail/.test(css), 'context rail CSS missing');
 check(fs.existsSync(path.join(root, 'motion.js')), 'motion.js file missing');
 check(/data-tilt/.test(landing) && /data-tilt/.test(mockups), 'tilt hooks missing from key frames');
 check(/data-reveal/.test(landing) && /data-reveal/.test(mockups), 'reveal hooks missing');
@@ -38,4 +59,4 @@ if (failures.length) {
   for (const failure of failures) console.error('- ' + failure);
   process.exit(1);
 }
-console.log('PASS: protected content and 3D progressive-enhancement hooks');
+console.log('PASS: protected content and rich 3D mockup hero requirements');
