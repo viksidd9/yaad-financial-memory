@@ -26,6 +26,12 @@ for (const [name, html] of [['landing', landing], ['mockups', mockups]]) {
 
 check(/prefers-reduced-motion:\s*reduce/.test(css), 'reduced-motion CSS missing');
 check(/\.three-fallback/.test(css), 'three-fallback styling missing');
+check(fs.existsSync(path.join(root, 'motion.js')), 'motion.js file missing');
+check(/data-tilt/.test(landing) && /data-tilt/.test(mockups), 'tilt hooks missing from key frames');
+check(/data-reveal/.test(landing) && /data-reveal/.test(mockups), 'reveal hooks missing');
+check(/canvas[^\{]*\{[^\}]*pointer-events\s*:\s*none/is.test(css), 'decorative canvas pointer-events:none missing');
+check(/overflow-x\s*:\s*(hidden|clip)/i.test(css), 'horizontal overflow protection missing');
+check(/@media\s*\(max-width:\s*650px\)/i.test(css), 'mobile breakpoint missing');
 
 if (failures.length) {
   console.error('FAIL');
