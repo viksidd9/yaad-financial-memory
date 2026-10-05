@@ -1,4 +1,4 @@
-﻿import fs from 'node:fs';
+import fs from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -59,6 +59,10 @@ check(/canvas[^\{]*\{[^\}]*pointer-events\s*:\s*none/is.test(css), 'decorative c
 check(/overflow-x\s*:\s*(hidden|clip)/i.test(css), 'horizontal overflow protection missing');
 check(/@media\s*\(max-width:\s*650px\)/i.test(css), 'mobile breakpoint missing');
 
+check(/<body class="landing-page">/.test(landing), 'landing page class missing for crisp rendering scope');
+check(/\.landing-page[\s\S]*backdrop-filter\s*:\s*none/i.test(css), 'landing blur override missing');
+check(/\.landing-page[\s\S]*\.hero-product[\s\S]*transform\s*:\s*none/i.test(css), 'landing hero screenshot transform must be disabled');
+check(/\.landing-page[\s\S]*\.product-frame:after[\s\S]*display\s*:\s*none/i.test(css), 'landing screenshot glow overlay must be disabled');
 if (failures.length) {
   console.error('FAIL');
   for (const failure of failures) console.error('- ' + failure);

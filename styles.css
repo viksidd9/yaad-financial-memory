@@ -36,3 +36,36 @@
 @media(min-width:1051px){.mock-hero-3d{grid-template-columns:1fr 1fr;gap:36px}.context-warning b{white-space:normal;font-size:14px;line-height:1.12}}
 
 .mock-memory-panel .mock-memory-stage canvas{display:none!important}
+
+/* Crisp landing render — no blur/rasterised glass on product evidence */
+.landing-page .ambient-shell span{filter:none}
+.landing-page .navlinks,
+.landing-page .hero-microproof span,
+.landing-page .fallback-node,
+.landing-page .product-frame,
+.landing-page .float-label,
+.landing-page .proofbar>div,
+.landing-page .case,
+.landing-page .principle{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.landing-page .navlinks,
+.landing-page .hero-microproof span,
+.landing-page .float-label,
+.landing-page .proofbar>div,
+.landing-page .case,
+.landing-page .principle{background-color:#fff}
+.landing-page .hero-visual,
+.landing-page .proofbar,
+.landing-page .triad,
+.landing-page .obligation-stage,
+.landing-page .permission-stack{perspective:none!important}
+.landing-page .product-frame,
+.landing-page .product-shot{transform-style:flat!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.landing-page .hero-product,
+.landing-page .product-shot,
+.landing-page .proofbar>div,
+.landing-page .principle{transform:none!important}
+.landing-page .product-frame:after,
+.landing-page .product-shot:after{display:none!important}
+.landing-page .product-frame img,
+.landing-page .product-shot img{filter:none!important;opacity:1!important;transform:none!important}
+.landing-page .float-label{animation:none!important;transform:none!important}
