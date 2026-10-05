@@ -69,3 +69,9 @@
 .landing-page .product-frame img,
 .landing-page .product-shot img{filter:none!important;opacity:1!important;transform:none!important}
 .landing-page .float-label{animation:none!important;transform:none!important}
+/* High-DPI landing evidence: preserve sharp product UI at desktop scale */
+@media(min-width:1051px){
+  .landing-page .hero{grid-template-columns:.74fr 1.26fr}
+  .landing-page .hero-product{width:min(100%,822px);right:0}
+}
+.landing-page .proofbar span{font-weight:600;color:#4f687f}
