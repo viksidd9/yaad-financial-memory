@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+﻿import fs from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -34,6 +34,11 @@ for (const text of [
 check(/memory-context-layer/.test(mockups), 'rich memory context layer missing');
 check(/context-rail/.test(mockups), 'memory context action rail missing');
 check(/context-card/.test(mockups), 'memory context cards missing');
+check((mockups.match(/class=\"context-card /g) || []).length === 4, 'expected four context-card nodes');
+check(/context-links/.test(mockups), 'direct context links missing');
+check(/@keyframes\s+contextNodeFloat/.test(css), 'context-card float animation missing');
+check(/\.context-card[^\{]*\{[^\}]*animation\s*:\s*contextNodeFloat/is.test(css), 'context cards are not animated');
+check(/\.mock-memory-panel\s+\.mock-memory-stage\s+canvas[^\{]*\{[^\}]*display\s*:\s*none/is.test(css), 'mockup WebGL sphere canvas must be hidden');
 
 for (const [name, html] of [['landing', landing], ['mockups', mockups]]) {
   check(/three-memory\.js/.test(html), name + ' missing three-memory.js module');
@@ -60,3 +65,4 @@ if (failures.length) {
   process.exit(1);
 }
 console.log('PASS: protected content and rich 3D mockup hero requirements');
+
