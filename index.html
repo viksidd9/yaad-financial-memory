@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="ambient-shell" aria-hidden="true"><span></span><span></span><span></span></div>
 <div class="wrap">
   <nav class="nav">
     <a class="brand" href="./" aria-label="Yaad home">
@@ -17,54 +18,64 @@
   </nav>
 
   <section class="hero">
-    <div>
+    <div class="hero-copy" data-reveal>
       <div class="eyebrow">Financial Memory · A PhonePe concept</div>
       <h1>Your month makes sense.</h1>
       <p>Transactions tell you money moved. Yaad remembers what it meant. It separates spending from transfers, keeps money due back open, and asks only when missing context materially changes the answer.</p>
       <div class="actions"><a class="cta primary" href="#join">Remember my month →</a><a class="cta" href="mockups/">See every human interaction</a></div>
+      <div class="hero-microproof"><span><b>Decide</b> when evidence is strong</span><span><b>Ask</b> when meaning changes the state</span><span><b>Wait</b> when settlement is incomplete</span></div>
     </div>
-    <div class="product-frame"><img src="assets/home-final-light.png" alt="Final Yaad Financial Memory home screen"></div>
+    <div class="hero-visual">
+      <div class="memory-stage" data-three-scene data-three-variant="hero" aria-hidden="true">
+        <div class="three-fallback">
+          <span class="fallback-line line-self"></span><span class="fallback-line line-arjun"></span><span class="fallback-line line-refund"></span>
+          <span class="fallback-node node-yaad">Yaad</span><span class="fallback-node node-hdfc">HDFC</span><span class="fallback-node node-sbi">SBI</span><span class="fallback-node node-arjun">Arjun Kumar</span><span class="fallback-node node-urban">UrbanStep</span>
+        </div>
+      </div>
+      <div class="product-frame hero-product" data-tilt data-depth="2"><div class="frame-chrome"><span></span><span></span><span></span><em>Financial Memory · Live product</em></div><img src="assets/home-final-light.png" alt="Final Yaad Financial Memory home screen"></div>
+      <div class="float-label float-label-a" aria-hidden="true"><span>SELF_TRANSFER</span><b>₹10,000</b></div>
+      <div class="float-label float-label-b" aria-hidden="true"><span>MONEY DUE BACK</span><b>₹4,099</b></div>
+    </div>
   </section>
 
-  <div class="proofbar">
-    <div><strong>Understands automatically</strong><span>Strong evidence is resolved silently.</span></div>
-    <div><strong>Asks only when needed</strong><span>Ambiguity reaches you, not routine.</span></div>
-    <div><strong>Remembers money due back</strong><span>Receivables and refunds stay open.</span></div>
-    <div><strong>Acts only with permission</strong><span>Seeing money is not authority to move it.</span></div>
+  <div class="proofbar" data-reveal>
+    <div data-depth="1"><strong>Understands automatically</strong><span>Strong evidence is resolved silently.</span></div>
+    <div data-depth="2"><strong>Asks only when needed</strong><span>Ambiguity reaches you, not routine.</span></div>
+    <div data-depth="3"><strong>Remembers money due back</strong><span>Receivables and refunds stay open.</span></div>
+    <div data-depth="4"><strong>Acts only with permission</strong><span>Seeing money is not authority to move it.</span></div>
   </div>
 </div>
 
-<section class="band" id="how"><div class="wrap">
-  <div class="eyebrow">Three moments. One Financial Memory.</div>
-  <h2>Yaad knows when to decide, ask, and wait.</h2>
-  <p class="lead">A bank transaction is an event. Spending is an interpretation. A receivable or expected refund is persistent state. Yaad connects those pieces without turning every payment into another chore.</p>
+<section class="band scenario-band" id="how"><div class="wrap">
+  <div class="section-head" data-reveal><div class="eyebrow">Three moments. One Financial Memory.</div><h2>Yaad knows when to decide, ask, and wait.</h2><p class="lead">A bank transaction is an event. Spending is an interpretation. A receivable or expected refund is persistent state. Yaad connects those pieces without turning every payment into another chore.</p></div>
   <div class="triad">
-    <article class="case"><span class="num">01</span><h3>₹10,000 moved between your accounts?</h3><p><b>Not spending.</b> Yaad recognises an owned-account transfer and excludes it automatically.</p></article>
-    <article class="case"><span class="num">02</span><h3>₹1,200 dinner with Arjun?</h3><p><b>₹600 spent. ₹600 still due back.</b> One clarification creates the correct economic meaning.</p></article>
-    <article class="case"><span class="num">03</span><h3>Return delivered, refund missing?</h3><p><b>Still open.</b> Yaad keeps watching until matching financial settlement evidence actually appears.</p></article>
+    <article class="case" data-reveal data-stage="DECIDE"><span class="num">01</span><span class="stage-word">DECIDE</span><h3>₹10,000 moved between your accounts?</h3><p><b>Not spending.</b> Yaad recognises an owned-account transfer and excludes it automatically.</p><div class="mini-orbit" aria-hidden="true"><i></i><i></i><i></i></div></article>
+    <article class="case" data-reveal data-stage="ASK"><span class="num">02</span><span class="stage-word">ASK</span><h3>₹1,200 dinner with Arjun?</h3><p><b>₹600 spent. ₹600 still due back.</b> One clarification creates the correct economic meaning.</p><div class="mini-orbit" aria-hidden="true"><i></i><i></i><i></i></div></article>
+    <article class="case" data-reveal data-stage="WAIT"><span class="num">03</span><span class="stage-word">WAIT</span><h3>₹3,499 return delivered, refund missing?</h3><p><b>Still open.</b> Yaad keeps watching until matching financial settlement evidence actually appears.</p><div class="mini-orbit" aria-hidden="true"><i></i><i></i><i></i></div></article>
   </div>
 </div></section>
 
-<section class="band"><div class="wrap">
-  <div class="eyebrow">Product proof</div><h2>Money still in motion stays visible.</h2>
-  <p class="lead">Yaad does not close an obligation because a parcel moved or a person promised repayment. It waits for financial evidence.</p>
-  <div class="product-shot"><img src="assets/money-due-back-final-light.png" alt="Final Yaad Money Due Back screen"></div>
+<section class="band due-band"><div class="wrap">
+  <div class="section-head" data-reveal><div class="eyebrow">Product proof</div><h2>Money still in motion stays visible.</h2><p class="lead">Yaad does not close an obligation because a parcel moved or a person promised repayment. It waits for financial evidence.</p></div>
+  <div class="obligation-stage" data-reveal>
+    <div class="obligation-orbit" aria-hidden="true"><span>RETURN DELIVERED</span><i></i><span>REFUND EXPECTED</span><i></i><span>SETTLEMENT</span></div>
+    <div class="product-shot" data-tilt><div class="frame-chrome"><span></span><span></span><span></span><em>Money Due Back · persistent state</em></div><img src="assets/money-due-back-final-light.png" alt="Final Yaad Money Due Back screen"></div>
+  </div>
   <div class="actions"><a class="cta" href="mockups/">View the complete interaction map →</a></div>
 </div></section>
 
-<section class="band"><div class="wrap">
-  <div class="eyebrow">Permission architecture</div><h2>Understanding is not authority.</h2>
-  <p class="lead">Yaad separates what it may see, understand, ask and act on. Payment authority is never inferred from data access.</p>
-  <div class="principles">
-    <div class="principle"><strong>SEE</strong><span>Consented accounts and commerce evidence.</span></div>
-    <div class="principle"><strong>UNDERSTAND</strong><span>Economic meaning, context and obligations.</span></div>
-    <div class="principle"><strong>ASK</strong><span>Clarify only when missing context materially changes the answer.</span></div>
-    <div class="principle"><strong>ACT</strong><span>Irreversible actions require an explicit, active grant.</span></div>
+<section class="band permission-band"><div class="wrap">
+  <div class="section-head" data-reveal><div class="eyebrow">Permission architecture</div><h2>Understanding is not authority.</h2><p class="lead">Yaad separates what it may see, understand, ask and act on. Payment authority is never inferred from data access.</p></div>
+  <div class="principles permission-stack">
+    <div class="principle" data-reveal data-depth="1"><strong>SEE</strong><span>Consented accounts and commerce evidence.</span><em>01 · Access</em></div>
+    <div class="principle" data-reveal data-depth="2"><strong>UNDERSTAND</strong><span>Economic meaning, context and obligations.</span><em>02 · Meaning</em></div>
+    <div class="principle" data-reveal data-depth="3"><strong>ASK</strong><span>Clarify only when missing context materially changes the answer.</span><em>03 · Clarification</em></div>
+    <div class="principle act-layer" data-reveal data-depth="5"><strong>ACT</strong><span>Irreversible actions require an explicit, active grant.</span><em>04 · Separate authority</em></div>
   </div>
 </div></section>
 
 <section class="band" id="join"><div class="wrap">
-  <div class="joinbox">
+  <div class="joinbox" data-reveal>
     <div><div class="eyebrow" style="color:#dff3ff">First 1,000</div><h2>Let Yaad remember your month.</h2><p>Join the pilot for a Financial Memory that removes transfers from spending, keeps money due back visible, and asks only when it genuinely needs you.</p></div>
     <form class="joinform" onsubmit="event.preventDefault();document.getElementById('join-state').hidden=false;this.querySelector('button').textContent='Joined';">
       <input aria-label="Name" required placeholder="Your name"><input aria-label="Email or mobile" required placeholder="Email or mobile"><button type="submit">Join pilot</button><div id="join-state" class="joinstate" hidden>Thanks — this prototype confirms the signup interaction for the Yaad pilot.</div>
@@ -73,5 +84,7 @@
 </div></section>
 
 <footer class="footer"><div class="wrap footer-inner"><span>Yaad — Your money, remembered correctly.</span><span>Round 3 concept · Final light UI · Synthetic demo data</span></div></footer>
+<script type="module" src="three-memory.js"></script>
+<script type="module" src="motion.js"></script>
 </body>
 </html>
