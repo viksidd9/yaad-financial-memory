@@ -399,3 +399,8 @@ body:after{
 }
 
 @media(max-width:650px){.navlinks .solid{padding:10px 12px!important}}
+
+/* Dimensional Yaad mark */
+.brandmark{width:52px!important;height:52px!important;padding:1px!important;filter:none!important;overflow:visible;transform:perspective(180px) rotateY(-5deg) rotateX(2deg);transform-origin:center;transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s ease!important}
+.brand:hover .brandmark{transform:perspective(180px) rotateY(2deg) rotateX(-1deg) translateY(-1px) scale(1.055)!important;filter:drop-shadow(0 12px 20px rgba(0,78,76,.18))!important}
+@media(max-width:650px){.brandmark{width:46px!important;height:46px!important}}
