@@ -16,9 +16,9 @@ function makeGlowTexture() {
   const ctx = canvas.getContext('2d');
   const g = ctx.createRadialGradient(64,64,0,64,64,64);
   g.addColorStop(0,'rgba(255,255,255,1)');
-  g.addColorStop(.18,'rgba(83,190,255,.82)');
-  g.addColorStop(.48,'rgba(37,131,216,.24)');
-  g.addColorStop(1,'rgba(37,131,216,0)');
+  g.addColorStop(.18,'rgba(84,199,190,.84)');
+  g.addColorStop(.48,'rgba(0,122,120,.25)');
+  g.addColorStop(1,'rgba(0,122,120,0)');
   ctx.fillStyle=g; ctx.fillRect(0,0,128,128);
   return new THREE.CanvasTexture(canvas);
 }
@@ -46,8 +46,8 @@ export function initFinancialMemoryScene(root) {
   camera.position.set(0,0,compact?11:12.8);
   const group=new THREE.Group(); scene.add(group);
   scene.add(new THREE.AmbientLight(0xffffff,1.8));
-  const key=new THREE.PointLight(0x79d7ff,compact?18:26,40); key.position.set(3,4,7); scene.add(key);
-  const rim=new THREE.PointLight(0x256fd8,compact?13:18,35); rim.position.set(-5,-2,4); scene.add(rim);
+  const key=new THREE.PointLight(0x7adbd3,compact?18:26,40); key.position.set(3,4,7); scene.add(key);
+  const rim=new THREE.PointLight(0x007a78,compact?13:18,35); rim.position.set(-5,-2,4); scene.add(rim);
 
   const glow=makeGlowTexture();
   const positions={
@@ -55,7 +55,7 @@ export function initFinancialMemoryScene(root) {
     arjun:new THREE.Vector3(3.05,1.55,-.4), urban:new THREE.Vector3(2.7,-1.85,-.65)
   };
   if(compact){Object.values(positions).forEach(p=>p.multiplyScalar(.82));}
-  const colors={yaad:0x1d84dc,hdfc:0x58c8ff,sbi:0x8fdfff,arjun:0x30a6ef,urban:0x67bff2};
+  const colors={yaad:0x007a78,hdfc:0x2ea89f,sbi:0x82d6cf,arjun:0x0a918c,urban:0x54c7be};
   const nodes=[];
   Object.entries(positions).forEach(([name,pos])=>{
     const radius=name==='yaad'?(compact?.62:.76):(compact?.31:.38);
@@ -65,20 +65,20 @@ export function initFinancialMemoryScene(root) {
     sprite.position.copy(pos); const s=name==='yaad'?(compact?2.7:3.4):(compact?1.4:1.7); sprite.scale.set(s,s,1); group.add(sprite);
   });
 
-  const relationships=[['hdfc','sbi',0x74d4ff],['yaad','arjun',0x2c9fe9],['yaad','urban',0x4999e8],['yaad','hdfc',0xa8e7ff]];
+  const relationships=[['hdfc','sbi',0x82d6cf],['yaad','arjun',0x0a918c],['yaad','urban',0x54c7be],['yaad','hdfc',0xa8e5df]];
   relationships.forEach(([a,b,color],idx)=>{
     const curve=curveBetween(positions[a],positions[b],idx===0?.18:.28);
     const geometry=new THREE.TubeGeometry(curve,48,idx===0?.018:.012,5,false);
     const mat=new THREE.MeshBasicMaterial({color,transparent:true,opacity:idx===0?.38:.27});
     group.add(new THREE.Mesh(geometry,mat));
   });
-  const orbitMat=new THREE.MeshBasicMaterial({color:0x5cc8ff,transparent:true,opacity:.14,side:THREE.DoubleSide});
+  const orbitMat=new THREE.MeshBasicMaterial({color:0x54c7be,transparent:true,opacity:.14,side:THREE.DoubleSide});
   [1.25,2.15,3.45].forEach((r,i)=>{const ring=new THREE.Mesh(new THREE.RingGeometry(r,r+.008,96),orbitMat.clone());ring.rotation.x=Math.PI/2+(i-.5)*.14;ring.rotation.y=(i-1)*.22;group.add(ring);});
 
   const starsCount=compact?55:95; const starPos=new Float32Array(starsCount*3);
   for(let i=0;i<starsCount;i++){starPos[i*3]=(Math.random()-.5)*11;starPos[i*3+1]=(Math.random()-.5)*7;starPos[i*3+2]=(Math.random()-.5)*6-1;}
   const starGeo=new THREE.BufferGeometry(); starGeo.setAttribute('position',new THREE.BufferAttribute(starPos,3));
-  const stars=new THREE.Points(starGeo,new THREE.PointsMaterial({color:0x8ddcff,size:compact?.025:.033,transparent:true,opacity:.52})); group.add(stars);
+  const stars=new THREE.Points(starGeo,new THREE.PointsMaterial({color:0xa8e5df,size:compact?.025:.033,transparent:true,opacity:.52})); group.add(stars);
 
   let active=true, visible=true, destroyed=false, pointerX=0,pointerY=0, raf=0;
   const resize=()=>{const w=Math.max(1,root.clientWidth),h=Math.max(1,root.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();};
