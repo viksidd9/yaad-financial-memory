@@ -472,3 +472,52 @@ body:after{
     clip-path:inset(0 round 26px)!important;
   }
 }
+
+
+/* Story rail final: no outer shell; keep only the five rounded navigation pills. */
+.landing-page .proofbar{
+  margin-bottom:32px!important;
+}
+.story-rail{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:10px!important;
+  width:min(1480px,calc(100% - 56px))!important;
+  margin:0 auto 30px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  background-clip:border-box!important;
+  box-shadow:none!important;
+  clip-path:none!important;
+  overflow:visible!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.story-rail a{
+  min-height:44px!important;
+  padding:10px 12px!important;
+  border:1px solid rgba(0,122,120,.14)!important;
+  border-radius:18px!important;
+  background:rgba(255,255,255,.78)!important;
+  box-shadow:0 5px 14px rgba(5,49,53,.04)!important;
+}
+@media(max-width:1050px){
+  .story-rail{
+    width:min(100% - 44px,1480px)!important;
+    grid-template-columns:repeat(5,minmax(120px,1fr))!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    scrollbar-width:none;
+  }
+}
+@media(max-width:650px){
+  .landing-page .proofbar{margin-bottom:24px!important}
+  .story-rail{
+    width:min(100% - 28px,1480px)!important;
+    margin:0 auto 22px!important;
+    grid-template-columns:repeat(5,minmax(132px,1fr))!important;
+  }
+  .story-rail a{border-radius:16px!important}
+}
