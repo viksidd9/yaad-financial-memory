@@ -453,3 +453,22 @@ body:after{
   }
   .story-rail a{border-radius:14px!important}
 }
+
+/* Rail v2: visible separation and fully rounded outer window. */
+.story-rail{
+  margin:36px auto 34px!important;
+  padding:12px!important;
+  border-radius:32px!important;
+  background:rgba(247,252,251,.82)!important;
+  background-clip:padding-box!important;
+  clip-path:inset(0 round 32px)!important;
+  box-shadow:0 18px 46px rgba(5,49,53,.085),inset 0 1px 0 rgba(255,255,255,.92)!important;
+}
+.story-rail a{border-radius:18px!important}
+@media(max-width:650px){
+  .story-rail{
+    margin:28px auto 26px!important;
+    border-radius:26px!important;
+    clip-path:inset(0 round 26px)!important;
+  }
+}
